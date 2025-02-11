@@ -15,8 +15,6 @@
     <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToLogin" text="Sign in" onAction="#switchToSigninPage"/>
     <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToSignin" text="Login" onAction="#switchToLoginPage"/>
     <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToProfile" text="Profile" onAction="#switchToProfilePage"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToProfile" text="Doctors List" onAction="#switchToProfilePage"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToProfile" text="Patients" onAction="#switchToProfilePage"/>
-
-
+    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToDoctorList" text="Doctors List" onAction="#switchToDoctorListPage"/>
+    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToPatientsList" text="Patients" onAction="#switchToPatientsListPage"/>
 </VBox>

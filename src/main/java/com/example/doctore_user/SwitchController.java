@@ -27,6 +27,9 @@ public class SwitchController {
     public Button switchToSignin;
     public Button switchToProfile;
 
+    public Button switchToDoctorList;
+    public Button switchToPatientsList;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -60,6 +63,18 @@ public class SwitchController {
         stage.show();
     }
 
-    public void switchToProfilePage(ActionEvent event) {
+    public void switchToProfilePage(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("user-profile-page.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root , 800 , 800);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToDoctorListPage(ActionEvent event) {
+
+    }
+
+    public void switchToPatientsListPage(ActionEvent event) {
     }
 }
