@@ -7,15 +7,13 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane alignment="CENTER" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.doctore_user.UserProfilePageController">
-    <Hyperlink style="-fx-font-weight: bold; -fx-border: none; "
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.doctore_user.DoctorProfilePageController">
+    <Hyperlink GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-border: none; "
                text="Back To First Page" onAction="#switchToFirstPage"/>
-    <HBox alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-padding: 5px;">
-        <Button style="-fx-background-color: #636362; -fx-text-fill:white; -fx-font-weight: bold; -fx-font-size: 10px; -fx-border: solid; " fx:id="editProfile" text="Change Settings" onAction="#editProfileButtonClicked"/>
-    </HBox>
+
     <HBox alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1" style="-fx-padding: 5px;">
-        <Button style="-fx-background-color: #636362; -fx-text-fill:white; -fx-font-weight: bold; -fx-font-size: 10px; -fx-border: solid; " fx:id="changeUserPassword" text="Change Password" onAction="#changeUserPasswordButtonClicked"/>
+        <Button style="-fx-background-color: #636362; -fx-text-fill:white; -fx-font-weight: bold; -fx-font-size: 10px; -fx-border: solid; " fx:id="reserveThisDoctor" text="Reserve" onAction="#reserveThisDoctorButtonClicked"/>
     </HBox>
     <HBox alignment="CENTER" GridPane.rowIndex="2" GridPane.columnIndex="0">
         <Label />
@@ -51,3 +49,4 @@
 
 
 </GridPane>
+

@@ -6,15 +6,17 @@
 
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.doctore_user.SwitchController">
+      fx:controller="com.example.doctore_user.FirstPageController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="helloText" text="Welcome to our Doctor Application"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToLogin" text="Sign in" onAction="#switchToSigninPage"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToSignin" text="Login" onAction="#switchToLoginPage"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToProfile" text="Profile" onAction="#switchToProfilePage"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToDoctorList" text="Doctors List" onAction="#switchToDoctorListPage"/>
-    <Button style="-fx-background-color: #b6f09e; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToPatientsList" text="Patients" onAction="#switchToPatientsListPage"/>
+    <Label text="Welcome to our Doctor Application"/>
+    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToLogin" text="Sign in" onAction="#switchToSigninPage"/>
+    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToSignin" text="Login" onAction="#switchToLoginPage"/>
+    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToProfile" text="Profile" onAction="#switchToProfilePage"/>
+    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToDoctorList" text="Doctors List" onAction="#switchToDoctorListPage"/>
+    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToPatientsList" text="Patients" onAction="#switchToPatientsListPage"/>
+    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToSingleDoctor" text="doctor" onAction="#switchToSingleDoctorPage"/>
+
 </VBox>

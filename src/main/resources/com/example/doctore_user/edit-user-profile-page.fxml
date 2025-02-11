@@ -6,17 +6,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.doctore_user.EditUserProfileController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<GridPane alignment="CENTER"  xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.example.doctore_user.EditUserProfileController">
     <Hyperlink style="-fx-font-weight: bold; -fx-border: none; "
                text="Back To First Page" onAction="#switchToFirstPage"/>
 
     <Label GridPane.rowIndex="1" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="2" GridPane.columnIndex="0" />
-    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-padding-top: 50; -fx-margin-top: 60px; -fx-font-size:20px; -fx-font-weight: bold; -fx-text-fill: #5CB338" alignment="CENTER" fx:id="signInText" text="Sign in Page"/>
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-padding-top: 50; -fx-margin-top: 60px; -fx-font-size:20px; -fx-font-weight: bold; -fx-text-fill: #5CB338" alignment="CENTER" text="Changing the information"/>
     <Label GridPane.rowIndex="4" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="5" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="6" GridPane.columnIndex="0" />
@@ -26,21 +23,20 @@
     <Label GridPane.rowIndex="10" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userNationalIdTextField" promptText="National ID" GridPane.rowIndex="11" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="12" GridPane.columnIndex="0" />
-    <Label fx:id="userFirstNameLabel" text="First Name" GridPane.rowIndex="17" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+    <Label fx:id="userFirstNameLabel" text="First Name" GridPane.rowIndex="13" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+    <Label GridPane.rowIndex="14" GridPane.columnIndex="0" />
+    <TextField  focusTraversable="false" fx:id="userFirstNameTextField" promptText="First Name" GridPane.rowIndex="15" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+    <Label GridPane.rowIndex="16" GridPane.columnIndex="0" />
+    <Label fx:id="userLastNameLabel" text="Last Name" GridPane.rowIndex="17" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
     <Label GridPane.rowIndex="18" GridPane.columnIndex="0" />
-    <TextField  focusTraversable="false" fx:id="userFirstNameTextField" promptText="First Name" GridPane.rowIndex="19" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+    <TextField  focusTraversable="false" fx:id="userLastNameTextField" promptText="Last Name" GridPane.rowIndex="19" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="20" GridPane.columnIndex="0" />
-    <Label fx:id="userLastNameLabel" text="Last Name" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+    <Label fx:id="userIllnessCaseLabel" text="Illness Case" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
     <Label GridPane.rowIndex="22" GridPane.columnIndex="0" />
-    <TextField  focusTraversable="false" fx:id="userLastNameTextField" promptText="Last Name" GridPane.rowIndex="23" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+    <TextField  focusTraversable="false" fx:id="userIllnessCaseTextField" promptText="Illness Case" GridPane.rowIndex="23" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="24" GridPane.columnIndex="0" />
-    <Label fx:id="userIllnessCaseLabel" text="Illness Case" GridPane.rowIndex="25" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+    <Label GridPane.rowIndex="25" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="26" GridPane.columnIndex="0" />
-    <TextField  focusTraversable="false" fx:id="userIllnessCaseTextField" promptText="Illness Case" GridPane.rowIndex="27" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
-    <Label GridPane.rowIndex="28" GridPane.columnIndex="0" />
-    <Label GridPane.rowIndex="29" GridPane.columnIndex="0" />
-    <Label GridPane.rowIndex="30" GridPane.columnIndex="0" />
-    <Label GridPane.rowIndex="31" GridPane.columnIndex="0" />
-    <Button GridPane.rowIndex="32" GridPane.columnIndex="0" style="-fx-background-color: #5D8736; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="signInButton" text="Sign in" onAction="#signInButtonClicked"/>
-
+    <Label GridPane.rowIndex="27" GridPane.columnIndex="0" />
+    <Button GridPane.rowIndex="28" GridPane.columnIndex="0" style="-fx-background-color: #5D8736; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="saveProfileChanges" text="Save Changes" onAction="#saveChangeProfileButtonClicked"/>
 </GridPane>
