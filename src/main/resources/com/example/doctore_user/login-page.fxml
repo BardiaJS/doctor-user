@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane alignment="CENTER"  xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.doctore_user.LoginController">
+        <Hyperlink style="-fx-font-weight: bold; -fx-border: none; "
+                   text="Back To First Page" onAction="#switchToFirstPage"/>
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-padding-top: 50; -fx-margin-top: 60px; -fx-font-size:20px; -fx-font-weight: bold; -fx-text-fill: #5CB338" alignment="CENTER" fx:id="signInText" text="Log in Page"/>
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="5" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="6" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="7" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="8" GridPane.columnIndex="0" />
+
+
+    <Label fx:id="userNationalIdLabel" text="National ID" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+    <Label GridPane.rowIndex="22" GridPane.columnIndex="0" />
+    <TextField  focusTraversable="false" fx:id="userNationalIdTextField" promptText="National ID" GridPane.rowIndex="23" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+    <Label GridPane.rowIndex="24" GridPane.columnIndex="0" />
+    <Label fx:id="userPasswordLabel" text="Password" GridPane.rowIndex="25" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+    <Label GridPane.rowIndex="26" GridPane.columnIndex="0" />
+    <PasswordField  focusTraversable="false" fx:id="userPasswordPasswordfield" promptText="Password" GridPane.rowIndex="27" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+    <Label GridPane.rowIndex="28" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="29" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="30" GridPane.columnIndex="0" />
+    <Label GridPane.rowIndex="31" GridPane.columnIndex="0" />
+    <Button GridPane.rowIndex="32" GridPane.columnIndex="0" style="-fx-background-color: #5D8736; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="loginButton" text="Log in" onAction="#loginButtonClicked"/>
+</GridPane>
+
+
+
