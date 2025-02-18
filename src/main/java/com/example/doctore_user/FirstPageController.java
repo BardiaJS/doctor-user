@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -28,6 +29,7 @@ public class FirstPageController {
     public Button switchToDoctorList;
     public Button switchToPatientsList;
     public Button switchToSingleDoctor;
+    public ListView listView;
 
     private Stage stage;
     private Scene scene;

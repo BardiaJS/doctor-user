@@ -6,14 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 
@@ -55,6 +56,47 @@ public class SignInController {
 
 
     public void signInButtonClicked(ActionEvent event) {
+        String national_id = userNationalIdTextField.getText();
+        String password = userPasswordPasswordfield.getText();
+        String first_name = userFirstNameTextField.getText();
+        String last_name = userLastNameTextField.getText();
 
+
+        try {
+            URL url = new URL("http://127.0.0.1:8000/api/signin-user");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String jsonInputString = String.format(
+                    "{\"first_name\":\"%s\", \"last_name\":\"%s\", \"national_id\":\"%s\", \"password\":\"%s\"}",
+                    first_name, last_name,national_id , password);
+
+            try (OutputStream os = conn.getOutputStream()) {
+                byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+                os.write(input, 0, input.length);
+            }
+
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_CREATED) {
+                showAlert("Sign Up Successful", "User created successfully.");
+            } else {
+                showAlert("Sign Up Failed", "An error occurred while creating the user.");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("Error", "Something went wrong: " + e.getMessage());
+        }
+    }
+
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }

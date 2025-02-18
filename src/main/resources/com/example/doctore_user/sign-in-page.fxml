@@ -36,9 +36,7 @@
     <Label GridPane.rowIndex="22" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userLastNameTextField" promptText="Last Name" GridPane.rowIndex="23" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="24" GridPane.columnIndex="0" />
-    <Label fx:id="userIllnessCaseLabel" text="Illness Case" GridPane.rowIndex="25" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label GridPane.rowIndex="26" GridPane.columnIndex="0" />
-    <TextField  focusTraversable="false" fx:id="userIllnessCaseTextField" promptText="Illness Case" GridPane.rowIndex="27" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
+
     <Label GridPane.rowIndex="28" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="29" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="30" GridPane.columnIndex="0" />
