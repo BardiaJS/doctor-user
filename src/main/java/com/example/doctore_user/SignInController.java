@@ -18,6 +18,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class SignInController {
@@ -81,22 +83,29 @@ public class SignInController {
                 os.write(input, 0, input.length);
             }
             // Read the response
-            if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) { // Success
-
+            if (conn.getResponseCode() == 201) {
+                showAlert("Successfully Registration");
+            }else{ // Success
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "utf-8"));
                 StringBuilder response = new StringBuilder();
                 String responseLine;
                 while ((responseLine = br.readLine()) != null) {
                     response.append(responseLine.trim());
                 }
-
                 // Parse and display errors
-                showAlert(response.toString());
+                response = new StringBuilder(response.toString());
+                Pattern pattern = Pattern.compile("\"([^\"]*)\"");
+                Matcher matcher = pattern.matcher(response);
+                StringBuilder alertMessages = new StringBuilder();
+                while (matcher.find()) {
+                    alertMessages.append(matcher.group(1)).append("\n"); // Collect sentences
+                }
+                showAlert(alertMessages.toString());
+
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
-            showAlert( e.getMessage());
+            System.out.println("NOOOOOOOOOOOOOOOOOO");
         }
     }
 
