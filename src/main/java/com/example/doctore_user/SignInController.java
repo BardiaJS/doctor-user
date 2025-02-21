@@ -10,7 +10,9 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -31,6 +33,7 @@ public class SignInController {
     public Label userIllnessCaseLabel;
     public TextField userIllnessCaseTextField;
     public Button signInButton;
+    public Label messageLabel;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -77,26 +80,33 @@ public class SignInController {
                 byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             }
+            // Read the response
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) { // Success
 
-            int responseCode = conn.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_CREATED) {
-                showAlert("Sign Up Successful", "User created successfully.");
-            } else {
-                showAlert("Sign Up Failed", "An error occurred while creating the user.");
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "utf-8"));
+                StringBuilder response = new StringBuilder();
+                String responseLine;
+                while ((responseLine = br.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+
+                // Parse and display errors
+                showAlert(response.toString());
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Error", "Something went wrong: " + e.getMessage());
+            showAlert( e.getMessage());
         }
     }
 
 
-    private void showAlert(String title, String message) {
+    private void showAlert(String jsonResponse) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
         alert.setHeaderText(null);
-        alert.setContentText(message);
+        alert.setContentText(jsonResponse);
         alert.showAndWait();
     }
+
+
 }

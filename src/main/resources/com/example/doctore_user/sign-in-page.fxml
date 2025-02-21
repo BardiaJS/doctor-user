@@ -9,15 +9,15 @@
 <?import javafx.geometry.Insets?>
 <GridPane alignment="CENTER"  xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.doctore_user.SignInController">
-    <Hyperlink style="-fx-font-weight: bold; -fx-border: none; "
+    <Hyperlink GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-border: none; "
                text="Back To First Page" onAction="#switchToFirstPage"/>
 
     <Label GridPane.rowIndex="1" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="2" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-padding-top: 50; -fx-margin-top: 60px; -fx-font-size:20px; -fx-font-weight: bold; -fx-text-fill: #5CB338" alignment="CENTER" fx:id="signInText" text="Sign in Page"/>
     <Label GridPane.rowIndex="4" GridPane.columnIndex="0" />
-    <Label GridPane.rowIndex="5" GridPane.columnIndex="0" />
-    <Label GridPane.rowIndex="6" GridPane.columnIndex="0" />
+    <Label  GridPane.rowIndex="5" GridPane.columnIndex="0" />
+    <Label fx:id="messageLabel" style="-fx-text-fill:red;" GridPane.rowIndex="6" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="7" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="8" GridPane.columnIndex="0" />
     <Label fx:id="userNationalIdLabel" text="National ID" GridPane.rowIndex="9" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
