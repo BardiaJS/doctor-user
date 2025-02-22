@@ -21,19 +21,19 @@
     <Label GridPane.rowIndex="7" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="8" GridPane.columnIndex="0" />
     <Label fx:id="userNationalIdLabel" text="National ID" GridPane.rowIndex="9" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label GridPane.rowIndex="10" GridPane.columnIndex="0" />
+    <Label fx:id="nationalErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="10" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userNationalIdTextField" promptText="National ID" GridPane.rowIndex="11" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="12" GridPane.columnIndex="0" />
     <Label fx:id="userPasswordLabel" text="Password" GridPane.rowIndex="13" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label GridPane.rowIndex="14" GridPane.columnIndex="0" />
+    <Label fx:id="passwordErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="14" GridPane.columnIndex="0" />
     <PasswordField fx:id="userPasswordPasswordfield" promptText="Password" GridPane.rowIndex="15" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="16" GridPane.columnIndex="0" />
     <Label fx:id="userFirstNameLabel" text="First Name" GridPane.rowIndex="17" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label GridPane.rowIndex="18" GridPane.columnIndex="0" />
+    <Label fx:id="firstNameErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="18" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userFirstNameTextField" promptText="First Name" GridPane.rowIndex="19" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="20" GridPane.columnIndex="0" />
     <Label fx:id="userLastNameLabel" text="Last Name" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label GridPane.rowIndex="22" GridPane.columnIndex="0" />
+    <Label fx:id="lastNameErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="22" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userLastNameTextField" promptText="Last Name" GridPane.rowIndex="23" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="24" GridPane.columnIndex="0" />
 

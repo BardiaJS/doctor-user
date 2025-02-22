@@ -1,6 +1,7 @@
 package com.example.doctore_user;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +18,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,6 +38,10 @@ public class SignInController {
     public TextField userIllnessCaseTextField;
     public Button signInButton;
     public Label messageLabel;
+    public Label nationalErrorLabel;
+    public Label passwordErrorLabel;
+    public Label firstNameErrorLabel;
+    public Label lastNameErrorLabel;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -85,6 +91,8 @@ public class SignInController {
             // Read the response
             if (conn.getResponseCode() == 201) {
                 showAlert("Successfully Registration");
+                FirstPageController firstPageController = new FirstPageController();
+                firstPageController.switchToLoginPage(event);
             }else{ // Success
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "utf-8"));
                 StringBuilder response = new StringBuilder();
@@ -97,10 +105,28 @@ public class SignInController {
                 Pattern pattern = Pattern.compile("\"([^\"]*)\"");
                 Matcher matcher = pattern.matcher(response);
                 StringBuilder alertMessages = new StringBuilder();
+
                 while (matcher.find()) {
                     alertMessages.append(matcher.group(1)).append("\n"); // Collect sentences
+
                 }
-                showAlert(alertMessages.toString());
+                String allMessages = alertMessages.toString();
+                String[]lines = allMessages.split("\n");
+
+                String nationalError = lines.length > 0 ? lines[0] : "";
+                nationalErrorLabel.setText(nationalError);
+
+                String passwordError = lines.length > 0 ? lines[1] : "";
+                passwordErrorLabel.setText(passwordError);
+
+
+                String firstNameError = lines.length > 0 ? lines[2] : "";
+                firstNameErrorLabel.setText(firstNameError);
+
+
+
+                String lastNameError = lines.length > 0 ? lines[3] : "";
+                lastNameErrorLabel.setText(lastNameError);
 
             }
 
