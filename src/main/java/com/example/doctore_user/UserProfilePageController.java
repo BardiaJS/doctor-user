@@ -82,11 +82,5 @@ public class UserProfilePageController {
         stage.show();
     }
 
-    public void switchToBack(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("doctor-list-page.fxml")));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root , 800 , 800);
-        stage.setScene(scene);
-        stage.show();
-    }
+
 }
