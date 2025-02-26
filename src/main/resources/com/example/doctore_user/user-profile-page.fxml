@@ -9,8 +9,12 @@
 <GridPane alignment="CENTER" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.doctore_user.UserProfilePageController">
-    <Hyperlink style="-fx-font-weight: bold; -fx-border: none; "
-               text="Back To First Page" onAction="#switchToFirstPage"/>
+    <Hyperlink style="-fx-font-weight: bold; -fx-border: none; -fx-padding: 5px;"
+               text="Back To First Page" onAction="#switchToBack"/>
+    <HBox alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1" style="-fx-padding: 5px;">
+        <Button   style="-fx-background-color: #B7B7B7; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 10px; -fx-border: solid;" fx:id="switchToDoctorList" text="Doctors List" onAction="#switchToDoctorListPage"/>
+    </HBox>
+
     <HBox alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-padding: 5px;">
         <Button style="-fx-background-color: #636362; -fx-text-fill:white; -fx-font-weight: bold; -fx-font-size: 10px; -fx-border: solid; " fx:id="editProfile" text="Change Settings" onAction="#editProfileButtonClicked"/>
     </HBox>
@@ -27,10 +31,10 @@
         <Label />
     </HBox>
     <HBox alignment="CENTER" GridPane.rowIndex="5" GridPane.columnIndex="0" style="-fx-padding: 5px;">
-        <Label text="Name: " GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+        <Label text="Welcome " GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
     </HBox>
     <HBox alignment="CENTER" GridPane.rowIndex="5" GridPane.columnIndex="1" style="-fx-padding: 5px;">
-        <Label text=" Bardia" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
+        <Label text=" To Home Page" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
     </HBox>
 
     <HBox alignment="CENTER" GridPane.rowIndex="6" GridPane.columnIndex="0">
@@ -42,12 +46,9 @@
     <HBox alignment="CENTER" GridPane.rowIndex="8" GridPane.columnIndex="0">
         <Label />
     </HBox>
-    <HBox alignment="CENTER" GridPane.rowIndex="9" GridPane.columnIndex="0" style="-fx-padding: 5px;">
-        <Label text="Name" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    </HBox>
-    <HBox alignment="CENTER" GridPane.rowIndex="9" GridPane.columnIndex="1" style="-fx-padding: 5px;">
-        <Label text="Bardia" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    </HBox>
+
+
+
 
 
 </GridPane>

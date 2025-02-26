@@ -72,9 +72,9 @@ public class FirstPageController {
         stage.show();
     }
 
-    public void switchToDoctorListPage(ActionEvent event) {
-
-    }
+//    public void switchToDoctorListPage(ActionEvent event) {
+//
+//    }
 
     public void switchToPatientsListPage(ActionEvent event) {
     }
@@ -110,13 +110,13 @@ public class FirstPageController {
         });
 
 
-        switchToDoctorList.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
-            switchToDoctorList.setStyle("-fx-background-color: #b6f09e; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;"); // Change to your desired color
-        });
+//        switchToDoctorList.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
+//            switchToDoctorList.setStyle("-fx-background-color: #b6f09e; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;"); // Change to your desired color
+//        });
 
-        switchToDoctorList.addEventHandler(MouseEvent.MOUSE_EXITED, event -> {
-            switchToDoctorList.setStyle("-fx-background-color: #7eb848; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;"); // Change back to original color
-        });
+//        switchToDoctorList.addEventHandler(MouseEvent.MOUSE_EXITED, event -> {
+//            switchToDoctorList.setStyle("-fx-background-color: #7eb848; -fx-text-fill:black; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;"); // Change back to original color
+//        });
 
 
         switchToPatientsList.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
@@ -139,4 +139,5 @@ public class FirstPageController {
         stage.setScene(scene);
         stage.show();
     }
+
 }

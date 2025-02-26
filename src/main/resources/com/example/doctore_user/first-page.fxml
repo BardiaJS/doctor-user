@@ -16,7 +16,6 @@
     <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToLogin" text="Sign in" onAction="#switchToSigninPage"/>
     <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToSignin" text="Login" onAction="#switchToLoginPage"/>
     <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToProfile" text="Profile" onAction="#switchToProfilePage"/>
-    <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToDoctorList" text="Doctors List" onAction="#switchToDoctorListPage"/>
     <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToPatientsList" text="Patients" onAction="#switchToPatientsListPage"/>
     <Button style="-fx-background-color: #7eb848; -fx-font-weight: bold; -fx-font-size: 15px; -fx-border: solid;" fx:id="switchToSingleDoctor" text="doctor" onAction="#switchToSingleDoctorPage"/>
 

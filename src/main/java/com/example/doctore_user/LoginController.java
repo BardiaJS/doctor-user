@@ -12,9 +12,12 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
+import java.net.http.HttpRequest;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,7 +25,7 @@ public class LoginController {
 
 
     public Label displayErrorLabel;
-    private String token;
+    public static String token;
     public Label userNationalIdLabel;
     public TextField inputUserNationalIdTextField;
     public Label userPasswordLabel;
@@ -81,7 +84,20 @@ public class LoginController {
             int code = conn.getResponseCode();
             if (code == 200) {
                 InputStream is = conn.getInputStream();
+                StringBuilder response = new StringBuilder();
+                try (Scanner scanner = new Scanner(conn.getInputStream())) {
+                    while (scanner.hasNext()) {
+                        response.append(scanner.nextLine());
+                    }
+                }
+                // Here, you can parse the JSON and get the token
+                token = response.toString() ;
+                int tokenStart = token.indexOf(":") + 2;
+                int tokenEnd = token.indexOf("\"", tokenStart);
+                token = token.substring(tokenStart, tokenEnd);
+                System.out.println("Token: " + token);
                 showAlert("You have successfully logged in!");
+                switchToUserProfile(event);
             } else {
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), StandardCharsets.UTF_8));
                 StringBuilder response = new StringBuilder();
@@ -111,13 +127,26 @@ public class LoginController {
     }
 
 
-
-
     private void showAlert(String jsonResponse) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText(null);
         alert.setContentText(jsonResponse);
         alert.showAndWait();
     }
+
+
+    public void switchToUserProfile(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("user-profile-page.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root , 800 , 800);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
+
+
+
 
 }
