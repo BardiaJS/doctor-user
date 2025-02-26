@@ -1,7 +1,6 @@
 package com.example.doctore_user;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,20 +10,16 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class SignInController {
+public class SignInUserController {
     public Label signInText;
     public Label userNationalIdLabel;
     public TextField userNationalIdTextField;
@@ -34,14 +29,11 @@ public class SignInController {
     public TextField userFirstNameTextField;
     public Label userLastNameLabel;
     public TextField userLastNameTextField;
-    public Label userIllnessCaseLabel;
-    public TextField userIllnessCaseTextField;
+
     public Button signInButton;
     public Label messageLabel;
-    public Label nationalErrorLabel;
-    public Label passwordErrorLabel;
-    public Label firstNameErrorLabel;
-    public Label lastNameErrorLabel;
+
+    public Label displayErrorLabel;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -71,8 +63,6 @@ public class SignInController {
         String password = userPasswordPasswordfield.getText();
         String first_name = userFirstNameTextField.getText();
         String last_name = userLastNameTextField.getText();
-
-
         try {
             URL url = new URL("http://127.0.0.1:8000/api/signin-user");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -89,11 +79,12 @@ public class SignInController {
                 os.write(input, 0, input.length);
             }
             // Read the response
-            if (conn.getResponseCode() == 201) {
+            if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 showAlert("Successfully Registration");
+
                 FirstPageController firstPageController = new FirstPageController();
                 firstPageController.switchToLoginPage(event);
-            }else{ // Success
+            }else{
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "utf-8"));
                 StringBuilder response = new StringBuilder();
                 String responseLine;
@@ -114,19 +105,9 @@ public class SignInController {
                 String[]lines = allMessages.split("\n");
 
                 String nationalError = lines.length > 0 ? lines[0] : "";
-                nationalErrorLabel.setText(nationalError);
-
-                String passwordError = lines.length > 0 ? lines[1] : "";
-                passwordErrorLabel.setText(passwordError);
+                displayErrorLabel.setText(nationalError);
 
 
-                String firstNameError = lines.length > 0 ? lines[2] : "";
-                firstNameErrorLabel.setText(firstNameError);
-
-
-
-                String lastNameError = lines.length > 0 ? lines[3] : "";
-                lastNameErrorLabel.setText(lastNameError);
 
             }
 

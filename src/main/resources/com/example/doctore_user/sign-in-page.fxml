@@ -8,7 +8,7 @@
 
 <?import javafx.geometry.Insets?>
 <GridPane alignment="CENTER"  xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.doctore_user.SignInController">
+      fx:controller="com.example.doctore_user.SignInUserController" style="width: 700px; height:700px">
     <Hyperlink GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-border: none; "
                text="Back To First Page" onAction="#switchToFirstPage"/>
 
@@ -16,24 +16,24 @@
     <Label GridPane.rowIndex="2" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-padding-top: 50; -fx-margin-top: 60px; -fx-font-size:20px; -fx-font-weight: bold; -fx-text-fill: #5CB338" alignment="CENTER" fx:id="signInText" text="Sign in Page"/>
     <Label GridPane.rowIndex="4" GridPane.columnIndex="0" />
-    <Label  GridPane.rowIndex="5" GridPane.columnIndex="0" />
+    <Label  GridPane.rowIndex="5" fx:id="displayErrorLabel" style="-fx-text-fill:red;" GridPane.columnIndex="0" />
     <Label fx:id="messageLabel" style="-fx-text-fill:red;" GridPane.rowIndex="6" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="7" GridPane.columnIndex="0" />
     <Label GridPane.rowIndex="8" GridPane.columnIndex="0" />
     <Label fx:id="userNationalIdLabel" text="National ID" GridPane.rowIndex="9" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label fx:id="nationalErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="10" GridPane.columnIndex="0" />
+    <Label  style="-fx-text-fill:red;" GridPane.rowIndex="10" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userNationalIdTextField" promptText="National ID" GridPane.rowIndex="11" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="12" GridPane.columnIndex="0" />
     <Label fx:id="userPasswordLabel" text="Password" GridPane.rowIndex="13" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label fx:id="passwordErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="14" GridPane.columnIndex="0" />
+    <Label  style="-fx-text-fill:red;" GridPane.rowIndex="14" GridPane.columnIndex="0" />
     <PasswordField fx:id="userPasswordPasswordfield" promptText="Password" GridPane.rowIndex="15" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="16" GridPane.columnIndex="0" />
     <Label fx:id="userFirstNameLabel" text="First Name" GridPane.rowIndex="17" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label fx:id="firstNameErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="18" GridPane.columnIndex="0" />
+    <Label  style="-fx-text-fill:red;" GridPane.rowIndex="18" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userFirstNameTextField" promptText="First Name" GridPane.rowIndex="19" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="20" GridPane.columnIndex="0" />
     <Label fx:id="userLastNameLabel" text="Last Name" GridPane.rowIndex="21" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 17px;" />
-    <Label fx:id="lastNameErrorLabel" style="-fx-text-fill:red;" GridPane.rowIndex="22" GridPane.columnIndex="0" />
+    <Label  style="-fx-text-fill:red;" GridPane.rowIndex="22" GridPane.columnIndex="0" />
     <TextField  focusTraversable="false" fx:id="userLastNameTextField" promptText="Last Name" GridPane.rowIndex="23" GridPane.columnIndex="0" style="-fx-font-weight: bold; -fx-font-size: 13px;" />
     <Label GridPane.rowIndex="24" GridPane.columnIndex="0" />
 
