@@ -6,14 +6,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="CENTER"  xmlns="http://javafx.com/javafx"
+<GridPane  alignment="CENTER"  xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.doctore_user.DoctorListController"
             prefHeight="800" prefWidth="800">
 
     <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Doctors" style="-fx-padding:10px; -fx-font-weight:bold; -fx-text-fill:gray;" />
-    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" disable="true">
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" >
         <ListView fx:id="doctorListView" />
+
     </VBox>
 
 

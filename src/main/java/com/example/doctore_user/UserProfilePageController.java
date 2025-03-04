@@ -83,4 +83,7 @@ public class UserProfilePageController {
     }
 
 
+    public void switchToBack(ActionEvent event) {
+
+    }
 }
