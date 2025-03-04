@@ -53,7 +53,6 @@ public class DoctorListController {
                             {
                                 button.setOnAction(event -> {
                                     String item = nameLabel.getText(); // Get the name from the label
-                                    reserveButtonClicked();
                                 });
 
                                 vBox.getChildren().addAll(nameLabel, lastNameLabel, categoryLabel, button); // Add labels and button to VBox
